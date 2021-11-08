@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+       <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </head>
+    <style type="text/css">
+    	#myBtn {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Fixed/sticky position */
+		  bottom: 20px; /* Place the button at the bottom of the page */
+		  right: 30px; /* Place the button 30px from the right */
+		  z-index: 99; /* Make sure it does not overlap */
+		  border: none; /* Remove borders */
+		  outline: none; /* Remove outline */
+		  background-color: red; /* Set a background color */
+		  color: white; /* Text color */
+		  cursor: pointer; /* Add a mouse pointer on hover */
+		  padding: 15px; /* Some padding */
+		  border-radius: 10px; /* Rounded corners */
+		  font-size: 18px; /* Increase font size */
+		}
+
+		#myBtn:hover {
+		  background-color: #555; /* Add a dark-grey background on hover */
+		}
+
+		.background{
+			color: black;
+		}
+		.divider{
+			border-top: 8px solid #F0131E;
+		}
+		
+		.card-content{
+			height: 80px;
+			overflow:hidden;
+		}
+		
+    </style>
+    <header>
+    	<nav class="nav-extended grey darken-4">
+		    <div class="nav-wrapper">
+		      	<a href="index.html" class="brand-logo">Marvel Cinematic Universe films</a>
+		      	<a class="brand-logo center">
+		      		
+		      		<div class="card-image center">
+		      			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" height="70px" width="200px">
+		      		</div>
+		      	</a>
+		      	<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>	
+		    </div>
+		    <div class="nav-content">
+		      <ul class="tabs tabs-transparent">
+		        <li class="tab"><a href="#phase1">Phase 1</a></li>
+		        <li class="tab"><a href="#phase2">Phase 2</a></li>
+		        <li class="tab"><a href="#phase3">Phase 3</a></li>
+		        <li class="tab"><a href="#phase4">Phase 4</a></li>
+		      </ul>
+		    </div>
+		</nav>
+    </header>
+    <style type="text/css">
+    	.card-image{
+    		height: 400px;
+    		overflow: hidden;
+    	}
+    </style>
+    <body style="background-color:white;">
+
+		  <ul class="sidenav" id="mobile-demo">
+		    <li><a href="sass.html">Sass</a></li>
+		    <li><a href="badges.html">Components</a></li>
+		    <li><a href="collapsible.html">JavaScript</a></li>
+		  </ul>
+
+	    <div id="phase1" class="col s12 section">
+	    	<h4 class="grey-text text-darken-4 center"><b> Phase 1 </b></h4>
+	    	<div class="divider"></div>
+	    	<div class="row" id="demo">
+	        	<!--下面迴圈的output會寫到這-->
+	      	</div>
+	    </div>
+
+	    <div id="phase2" class="col s12 section">
+	    	<h4 class="grey-text text-darken-4 center"><b> Phase 2 </b></h4>
+	    	<div class="divider"></div>
+	    	<div class="row" id="demo2">
+	        	<!--下面迴圈的output會寫到這-->
+	      	</div>
+	    </div>
+	    
+	  	<div id="phase3" class="col s12 section">
+	  		<h4 class="grey-text text-darken-4 center"><b> Phase 3 </b></h4>
+	    	<div class="divider"></div>	
+	  		<div class="row" id="demo3">
+	        	<!--下面迴圈的output會寫到這-->
+	      	</div>
+	    </div>
+	    
+	  	<div id="phase4" class="col s12 section">
+	  		<h4 class="grey-text text-darken-4 center"><b> Phase 4 </b></h4>
+	    	<div class="divider"></div>	
+	  		<div class="row" id="demo4">
+	        	<!--下面迴圈的output會寫到這-->
+	      	</div>
+	    </div>
+      <script>
+ 
+        function writeText(index){
+        	var text="";
+        	picture = [["https://upload.wikimedia.org/wikipedia/en/0/02/Iron_Man_%282008_film%29_poster.jpg", 
+                   "https://upload.wikimedia.org/wikipedia/en/f/f0/The_Incredible_Hulk_%28film%29_poster.jpg", 
+                   "https://upload.wikimedia.org/wikipedia/en/e/ed/Iron_Man_2_poster.jpg", 
+                   "https://upload.wikimedia.org/wikipedia/en/9/95/Thor_%28film%29_poster.jpg",
+                   "https://upload.wikimedia.org/wikipedia/en/3/37/Captain_America_The_First_Avenger_poster.jpg",
+                   "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg"],
+                   	["https://upload.wikimedia.org/wikipedia/en/1/19/Iron_Man_3_poster.jpg",
+                   	"https://upload.wikimedia.org/wikipedia/en/7/7f/Thor_The_Dark_World_poster.jpg",
+                   	"https://upload.wikimedia.org/wikipedia/en/9/9e/Captain_America_The_Winter_Soldier_poster.jpg",
+                   	"https://upload.wikimedia.org/wikipedia/en/3/33/Guardians_of_the_Galaxy_%28film%29_poster.jpg",
+                   	"https://upload.wikimedia.org/wikipedia/en/f/ff/Avengers_Age_of_Ultron_poster.jpg",
+                   	"https://upload.wikimedia.org/wikipedia/en/1/12/Ant-Man_%28film%29_poster.jpg"],
+                   	["https://upload.wikimedia.org/wikipedia/en/5/53/Captain_America_Civil_War_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/a/a1/Doctor_Strange_%282016_film%29_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/a/ab/Guardians_of_the_Galaxy_Vol_2_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/f/f9/Spider-Man_Homecoming_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/7/7d/Thor_Ragnarok_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/d/d6/Black_Panther_%28film%29_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/4/4d/Avengers_Infinity_War_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/2/2c/Ant-Man_and_the_Wasp_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/4/4e/Captain_Marvel_%28film%29_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+                   	 "https://upload.wikimedia.org/wikipedia/en/b/bd/Spider-Man_Far_From_Home_poster.jpg"],
+                   	 ["https://upload.wikimedia.org/wikipedia/en/e/e9/Black_Widow_%282021_film%29_poster.jpg",
+                   	  "https://upload.wikimedia.org/wikipedia/en/7/74/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster.jpeg",
+                   	  "https://upload.wikimedia.org/wikipedia/en/9/9b/Eternals_%28film%29_poster.jpeg"]];
+        
+	        films = [["Iron Man (2008)",
+	                   "The Increadible Hulk (2008)",
+	                   "Iron Man 2 (2010)",
+	                   "Thor (2011)",
+	                   "Captain America The First Avenger (2011)",
+	                   "Marvel's The Avengers (2012)"],
+	                   ["Iron Man 3 (2013)",
+	                   	"Thor: The Dark World (2013)",
+	                   	"Captain America: The Winter Soldier (2014)",
+	                   	"Guardians of the Galaxy (2014)",
+	                   	"Avengers: Age of Ultron (2015)",
+	                   	"Ant-Man (2015)"],
+	                   	["Captain America: Civil War (2016)",
+	                   	 "Doctor Strange (2016)",
+	                   	 "Guardians of the Galaxy Vol. 2 (2017)",
+	                   	 "Spider-Man: Homecoming (2017)",
+	                   	 "Thor: Ragnarok (2017)",
+	                   	 "Black Panther (2018)",
+	                   	 "Avengers: Infinity War (2018)",
+	                   	 "Ant-Man and the Wasp (2018)",
+	                   	 "Captain Marvel (2019)",
+	                   	 "Avengers: Endgame (2019)",
+	                   	 "Spider-Man: Far From Home (2019)"],
+	                   	 ["Black Widow (2021)",
+	                   	  "Shang-Chi and the Legend of the Ten Rings (2021)",
+	                   	  "Eternals (2021)"]];
+	        links = [["items.html?filmid=0",
+	        				 "items.html?filmid=1",
+	        				 "items.html?filmid=2",
+	        				 "items.html?filmid=3",
+	        				 "items.html?filmid=4",
+	        				 "items.html?filmid=5"],
+	        				 ["items.html?filmid=6",
+	        				 "items.html?filmid=7",
+	        				 "items.html?filmid=8",
+	        				 "items.html?filmid=9",
+	        				 "items.html?filmid=10",
+	        				 "items.html?filmid=11"],
+	        				 ["items.html?filmid=12",
+	        				 "items.html?filmid=13",
+	        				 "items.html?filmid=14",
+	        				 "items.html?filmid=15",
+	        				 "items.html?filmid=16",
+	        				 "items.html?filmid=17",
+	        				 "items.html?filmid=18",
+	        				 "items.html?filmid=19",
+	        				 "items.html?filmid=20",
+	        				 "items.html?filmid=21",
+	        				 "items.html?filmid=22"],
+	        				 ["items.html?filmid=23",
+	        				 "items.html?filmid=24",
+	        				 "items.html?filmid=25"]];
+
+	        for (i = 0; i < picture[index].length; i++) {
+	 			let T = '<div class="col s12 m6 l2">'+
+	 							  '	<div class="card hoverable  grey lighten-1">'+
+	          			'		<div class="card-image center grey lighten-1">'+
+	          			'			<img src="'+picture[index][i]+'">'+
+	          			'		</div>'+
+	          			'    	<div class="card-content grey lighten-1">'+
+	          			'      		<h6><b><a class="black-text">'+films[index][i]+'</b></a></h6>'+
+	          			'    	</div>'+
+	          			'    	<div class="card-action grey lighten-1">'+
+	          			'      		<a class="teal-text" href="'+links[index][i]+'">More-></a>'+
+	          			'    	</div>'+
+	          			'  	</div>'+
+	          			'</div>';
+	          	text += T;
+	        }
+	        return text;
+
+        }
+        
+        
+  		document.getElementById("demo").innerHTML = writeText(0);
+  		document.getElementById("demo2").innerHTML = writeText(1);
+  		document.getElementById("demo3").innerHTML = writeText(2);
+  		document.getElementById("demo4").innerHTML = writeText(3);
+
+		//Get the button:
+		mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		    mybutton.style.display = "block";
+		  } else {
+		    mybutton.style.display = "none";
+		  }
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		  document.body.scrollTop = 0; // For Safari
+		  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+		}
+     
+      </script>
+  
+      <footer class="page-footer grey darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+              	<a class="grey-text text-lighten-3" href="https://www.marvel.com/movies" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Marvel_Studios_2016_logo.svg/1280px-Marvel_Studios_2016_logo.svg.png" height="50%" width="50%"></a>
+              </div>
+            </div>
+          </div>       
+          <div class="footer-copyright">
+            <div class="container">
+           		 © 2021 No Copyright NCHU HTML
+            </div>
+          </div>
+       </footer>
+
+    </body>
+    
+  </html>
